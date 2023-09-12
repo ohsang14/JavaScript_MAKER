@@ -12,7 +12,6 @@ function onMove(event) {
     ctx.lineTo(event.offsetX, event.offsetY);
     ctx.stroke();
   }
-  ctx.beginPath();
   ctx.moveTo(event.offsetX, event.offsetY);
 }
 function startPainting() {
@@ -21,13 +20,7 @@ function startPainting() {
 function cancelPainting() {
   isPainting = false;
 }
-function onLineWidthChange(event) {
-  ctx.lineWidth = event.target.value;
-}
-
 canvas.addEventListener("mousemove", onMove);
 canvas.addEventListener("mousedown", startPainting);
 canvas.addEventListener("mouseup", cancelPainting);
 canvas.addEventListener("mouseleave", cancelPainting);
-
-lineWidth.addEventListener("change", onLineWidthChange);
